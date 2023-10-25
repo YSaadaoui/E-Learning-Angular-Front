@@ -1,0 +1,21 @@
+<div class="aside">
+  <div class="container-fluid">
+    <nav>
+      <ul *ngIf="isAuthenticated">
+        <li *ngIf="isAdmin"><a routerLink="/students" routerLinkActive="active"><span><i class="fa-solid fa-graduation-cap"></i></span>
+            Students</a></li>
+        <li *ngIf="isAdmin"><a routerLink="/courses" routerLinkActive="active"><span><i class="fa-solid fa-receipt"></i></span>
+            Courses</a>
+        </li>
+        <li *ngIf="isAdmin"><a routerLink="/teachers" routerLinkActive="active"><span><i class="fa-solid fa-user-graduate"></i></span>
+            Teachers</a></li>
+        <li *ngIf="isInstructor"><a [routerLink]="['/instructor-courses/',instructorId]" routerLinkActive="active"><span><i
+                class="fa-solid fa-person-chalkboard"></i></span>
+            My courses</a></li>
+        <li *ngIf="isStudent"><a [routerLink]="['/student-courses/',studentId]" routerLinkActive="active"><span><i
+              class="fa-solid fa-school"></i></span>
+          My courses</a></li>
+      </ul>
+    </nav>
+  </div>
+</div>
